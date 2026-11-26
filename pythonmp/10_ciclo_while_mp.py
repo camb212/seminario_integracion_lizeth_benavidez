@@ -1,15 +1,15 @@
-prestamos_activos = 20
+reservas_activas = 20
 limite_capacidad = 100
 
-while prestamos_activos < limite_capacidad:
-    print("La biblioteca está recibiendo préstamos, total actual:", prestamos_activos)
-    prestamos_activos += 20
+while reservas_activas < limite_capacidad:
+    print("La agencia está recibiendo reservas, total actual:", reservas_activas)
+    reservas_activas += 20
 
-print("La biblioteca ha alcanzado su límite operativo óptimo de préstamos")
+print("La agencia ha alcanzado su límite de reservas")
 
-stock_libro = 50
-while stock_libro > 0:
-    print("Quedan ", stock_libro, " ejemplares disponibles para préstamo")
-    stock_libro -= 10
+cupos_paquete = 50
+while cupos_paquete > 0:
+    print("Quedan ", cupos_paquete, " cupos disponibles para viajar")
+    cupos_paquete -= 10
 
-print("Se agotaron todos los ejemplares de la obra")
+print("Se agotaron todos los cupos del paquete turístico")

@@ -1,21 +1,22 @@
-class LibroBiblioteca:
-    titulo: str
-    isbn: str
-    
-    def __init__(self, titulo: str, isbn: str):
-        self.titulo = titulo
-        self.isbn = isbn
+class PaqueteTuristico:
+    destino: str
+    codigo: str
+
+    def __init__(self, destino: str, codigo: str):
+        self.destino = destino
+        self.codigo = codigo
 
     def mostrar_inf(self):
-        print("Título del libro:", self.titulo)
-        print("ISBN:", self.isbn)
+        print("Destino del viaje:", self.destino)
+        print("Código del paquete:", self.codigo)
 
-libro1 = LibroBiblioteca("Cien Años de Soledad", "978-0307474728")
-libro2 = LibroBiblioteca("Don Quijote de la Mancha", "978-8424116033")
-libro3 = LibroBiblioteca("El Principito", "978-0156013987")
-libro4 = LibroBiblioteca("Clean Code", "978-0132350884")
 
-libro1.mostrar_inf()
-libro2.mostrar_inf()
-libro3.mostrar_inf()
-libro4.mostrar_inf()
+paquete1 = PaqueteTuristico("Galápagos", "PKG-001")
+paquete2 = PaqueteTuristico("Cuenca", "PKG-002")
+paquete3 = PaqueteTuristico("Baños", "PKG-003")
+paquete4 = PaqueteTuristico("Quito", "PKG-004")
+
+paquete1.mostrar_inf()
+paquete2.mostrar_inf()
+paquete3.mostrar_inf()
+paquete4.mostrar_inf()

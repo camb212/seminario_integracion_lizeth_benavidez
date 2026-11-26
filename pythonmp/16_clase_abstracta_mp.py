@@ -1,13 +1,15 @@
 from abc import ABC, abstractmethod
 
-class MaterialBiblioteca(ABC):
+class ServicioAgencia(ABC):
     @abstractmethod
-    def prestar(self):
+    def reservar(self):
         pass
 
-class Libro(MaterialBiblioteca):
-    def prestar(self):
-        return "Libro prestado por 15 días"
 
-libro = Libro()
-print(libro.prestar())
+class PaqueteTuristico(ServicioAgencia):
+    def reservar(self):
+        return "Paquete turístico reservado por 15 días"
+
+
+paquete = PaqueteTuristico()
+print(paquete.reservar())
