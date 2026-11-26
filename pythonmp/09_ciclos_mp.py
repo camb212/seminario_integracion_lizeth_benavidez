@@ -1,51 +1,52 @@
-for prestamo in range(1, 6):
-    print("Renovación de préstamo #", prestamo)
+for reserva in range(1, 6):
+    print("Confirmación de reserva #", reserva)
 
-for libro_id in range(1, 11):
-    print("Costo de multa por día atrasado:", 0.50, "*", libro_id, "=", 0.50 * libro_id)
+for paquete_id in range(1, 11):
+    print("Costo adicional por día de hospedaje:", 10, "*", paquete_id, "=", 10 * paquete_id)
 
-for libro_id in range(1, 11, 2):
-    print("Tarifa especial por días acumulados:", 0.50, "*", libro_id, "=", 0.50 * libro_id)
+for paquete_id in range(1, 11, 2):
+    print("Descuento especial por días de viaje:", 10, "*", paquete_id, "=", 10 * paquete_id)
 
-libros = [
-    {"id": 1, "titulo": "Cien Años de Soledad", "autor": "Gabriel García Márquez", "estado": "Disponible"},
-    {"id": 2, "titulo": "Don Quijote de la Mancha", "autor": "Miguel de Cervantes", "estado": "Disponible"},
-    {"id": 3, "titulo": "El Principito", "autor": "Antoine de Saint-Exupéry", "estado": "Disponible"}
+paquetes = [
+    {"id": 1, "destino": "Galápagos", "precio": 500, "estado": "Disponible"},
+    {"id": 2, "destino": "Cuenca", "precio": 150, "estado": "Disponible"},
+    {"id": 3, "destino": "Baños", "precio": 100, "estado": "Disponible"}
 ]
 
-print("Lista de libros en inventario:")
-for libro in libros:
-    print(f"{libro['id']} - Título: {libro['titulo']}")
+print("Lista de paquetes turísticos:")
+for paquete in paquetes:
+    print(f"{paquete['id']} - Destino: {paquete['destino']}")
 
-autores = ["Gabriel García Márquez", "Jorge Luis Borges", "Mario Vargas Llosa"]
-for autor in autores:
-    print("Autor actual en catálogo: ", autor)
+destinos = ["Galápagos", "Quito", "Cuenca"]
+for destino in destinos:
+    print("Destino actual en catálogo: ", destino)
 
-ejemplares_disponibles = {
-    "Cien Años de Soledad": 12,
-    "Don Quijote de la Mancha": 4,
-    "Rayuela": 3,
-    "El Aleph": 2
+cupos_disponibles = {
+    "Galápagos": 12,
+    "Cuenca": 4,
+    "Baños": 3,
+    "Quito": 8
 }
 
-for titulo, stock in ejemplares_disponibles.items():
-    if stock >= 5:
-        print(titulo, "tiene suficiente stock disponible")
+for destino, cupos in cupos_disponibles.items():
+    if cupos >= 5:
+        print(destino, "tiene suficientes cupos disponibles")
     else:
-        print(titulo, "requiere reposición urgente de ejemplares")
+        print(destino, "requiere más cupos para las reservas")
 
-print("Ciclo anidado para inventario físico por estantería:")
-estanterias = ["Estante A", "Estante B", "Estante C", "Estante D"]
-for estante in estanterias:
-    print("Revisando sección:", estante)
-    for pasillo in range(1, 4):
-        print("Pasillo revisado: ", pasillo)
+print("Ciclo anidado para revisar paquetes turísticos:")
+sucursales = ["Sucursal Norte", "Sucursal Sur", "Sucursal Centro", "Sucursal Valle"]
 
-print("Uso de Break y Continue en búsqueda de libros:")
-for estante in estanterias:
-    print("Estante actual: ", estante)
-    if estante == "Estante C":
+for sucursal in sucursales:
+    print("Revisando sucursal:", sucursal)
+    for paquete in range(1, 4):
+        print("Paquete turístico revisado: ", paquete)
+
+print("Uso de Break y Continue en búsqueda de destinos:")
+for sucursal in sucursales:
+    print("Sucursal actual: ", sucursal)
+    if sucursal == "Sucursal Centro":
         break
-    elif estante == "Estante B":
+    elif sucursal == "Sucursal Sur":
         continue
-    print("Estante verificado con éxito: ", estante)
+    print("Sucursal verificada con éxito: ", sucursal)

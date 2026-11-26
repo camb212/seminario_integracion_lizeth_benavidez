@@ -1,49 +1,54 @@
-print("Módulo de Funciones de la Biblioteca")
+print("Módulo de Funciones de la Agencia de Viajes")
 print("Autor: Andrés Jurado")
 
-def registrar_ingreso():
-    print("Verificando código de barras del libro...")
-    print("Libro registrado exitosamente en el sistema")
+def registrar_reserva():
+    print("Verificando datos de la reserva...")
+    print("Reserva registrada exitosamente en el sistema")
 
-registrar_ingreso()
-registrar_ingreso()
-registrar_ingreso()
-registrar_ingreso()
+registrar_reserva()
+registrar_reserva()
+registrar_reserva()
+registrar_reserva()
 
-def prestar_libro(usuario):
-    print(f"Se ha procesado el préstamo de un ejemplar para el usuario: {usuario}")
 
-prestar_libro("Carlos Pérez")
-prestar_libro("María Gómez")
-prestar_libro("Lucía Torres")
-prestar_libro("Andrés Jurado")
+def reservar_paquete(usuario):
+    print(f"Se ha procesado la reserva de un paquete turístico para el cliente: {usuario}")
 
-def calcular_multa(dias_retraso, tarifa_diaria):
-    multa_total = dias_retraso * tarifa_diaria
-    return multa_total
+reservar_paquete("Carlos Pérez")
+reservar_paquete("María Gómez")
+reservar_paquete("Lucía Torres")
+reservar_paquete("Andrés Jurado")
 
-deuda = calcular_multa(4, 0.50)
-print("La multa acumulada es de: $", deuda)
 
-deuda_usuario_vip = calcular_multa(10, 0.25)
-print("Multa calculada para usuario VIP: $", deuda_usuario_vip)
+def calcular_costo(dias_viaje, tarifa_diaria):
+    costo_total = dias_viaje * tarifa_diaria
+    return costo_total
 
-def verificar_estado_usuario(nombre, libros_prestados):
-    if libros_prestados <= 3:
-        print(f"El usuario {nombre} está habilitado para solicitar más préstamos")
+costo = calcular_costo(4, 50)
+print("El costo total del viaje es de: $", costo)
+
+costo_usuario_vip = calcular_costo(10, 25)
+print("Costo calculado para cliente VIP: $", costo_usuario_vip)
+
+
+def verificar_estado_cliente(nombre, reservas_realizadas):
+    if reservas_realizadas <= 3:
+        print(f"El cliente {nombre} está habilitado para realizar más reservas")
     else:
-        print(f"El usuario {nombre} ha excedido el límite de préstamos permitidos")
+        print(f"El cliente {nombre} ha excedido el límite de reservas permitidas")
 
-verificar_estado_usuario("Francisco Higuera", 2)
-verificar_estado_usuario("Anahí Loza", 5)
+verificar_estado_cliente("Francisco Higuera", 2)
+verificar_estado_cliente("Anahí Loza", 5)
 
-nombre_obra: str = "Cien Años de Soledad"
-codigo_isbn: int = 9780307
+
+nombre_destino: str = "Galápagos"
+codigo_paquete: int = 9780307
 precio_referencia: float = 24.99
 es_disponible: bool = True
 
-def estimar_valor_inventario(cantidad: int, costo_unitario: float) -> float:
+
+def estimar_valor_paquetes(cantidad: int, costo_unitario: float) -> float:
     return cantidad * costo_unitario
 
-valor_total: float = estimar_valor_inventario(15, 24.99)
-print("Valor total del lote en inventario: $", valor_total)
+valor_total: float = estimar_valor_paquetes(15, 24.99)
+print("Valor total de los paquetes turísticos: $", valor_total)

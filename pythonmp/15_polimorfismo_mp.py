@@ -1,23 +1,26 @@
-class MaterialBiblioteca:
-    titulo: str
+class ServicioAgencia:
+    destino: str
     categoria: str
 
-    def __init__(self, titulo: str, categoria: str):
-        self.titulo = titulo
+    def __init__(self, destino: str, categoria: str):
+        self.destino = destino
         self.categoria = categoria
 
     def mostrar_info(self):
-        print("Título: ", self.titulo)
+        print("Destino: ", self.destino)
         print("Categoría: ", self.categoria)
 
-class Libro(MaterialBiblioteca):
-    def __init__(self, titulo: str, categoria: str):
-        super().__init__(titulo, categoria)
+
+class PaqueteTuristico(ServicioAgencia):
+    def __init__(self, destino: str, categoria: str):
+        super().__init__(destino, categoria)
 
     def mostrar_info(self):
-        print("El título del libro es: ", self.titulo, "Categoría: ", self.categoria)
+        print("El destino del paquete es: ", self.destino, "Categoría: ", self.categoria)
 
-libro_1 = Libro("Cien años de soledad", "Novela")
-libro_2 = Libro("Clean Code", "Programación")
-libro_1.mostrar_info()
-libro_2.mostrar_info()
+
+paquete_1 = PaqueteTuristico("Galápagos", "Playa")
+paquete_2 = PaqueteTuristico("Baños", "Aventura")
+
+paquete_1.mostrar_info()
+paquete_2.mostrar_info()
